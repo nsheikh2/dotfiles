@@ -1,0 +1,1 @@
+alias claer=clear
