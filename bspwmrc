@@ -27,6 +27,11 @@ bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+
+#bspc config click_to_focus true
+bspc config focus_follows_pointer true
+
+
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
@@ -35,11 +40,13 @@ bspc rule -a Screenkey manage=off
 
 
 #start programs
-xrandr --newmode "1920x1080_60.00"  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
-xrandr --addmode Virtual-1 "1920x1080_60.00"
-xrandr --output Virtual-1 --mode "1920x1080_60.00"
 
-feh --bg-center ~/pics/wallpaper
-#compton -b --config ~/.config/compton/compton.conf
+#xrandr --newmode "1920x1080_60.00"  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
+#xrandr --addmode Virtual-1 "1920x1080_60.00"
+#xrandr --output Virtual-1 --mode "1920x1080_60.00"
+
+feh --bg-center ~/Pictures/feh_wall
+compton --config ~/.config/compton/compton.conf -b
+setxkbmap -option caps:super
 
 #rofi -show run
