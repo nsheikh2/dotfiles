@@ -3,7 +3,11 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
-set guifont=Ubuntu\ Mono\ Regular\ 11
+if has("unix")
+    set guifont=Ubuntu\ Mono\ Regular\ 11
+else
+    set guifont=Consolas:h12
+endif
 
 colorscheme peachpuff
 

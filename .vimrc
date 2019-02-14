@@ -1,8 +1,8 @@
 set secure
 set nocompatible
-
 set nomodeline
 
+set mouse=a
 set noeb vb t_vb=
 
 set tabstop=4
@@ -29,6 +29,31 @@ hi CursorLine term=bold cterm=bold guibg=Grey85
 
 set wildmenu
 
-set mouse=a
+"F1 is annoying, I generally use help on a topic anyhow
+nnoremap <F1>   <nop>
+inoremap <F1>   <nop>
+
+"tab key remapping stuff
+nnoremap th     :tabfirst<CR>
+nnoremap tk     :tabnext<CR>
+nnoremap tj     :tabprev<CR>
+nnoremap tl     :tablast<CR>
+nnoremap tt     :tabedit<Space>
+nnoremap tn     :tabnext<Space>
+nnoremap tm     :tabm<Space>
+nnoremap td     :tabclose<CR>
+
+" for opening a quickfix window automatically with :make
+" See: http://vim.wikia.com/wiki/Automatically_open_the_quickfix_window_on_:make
+" Automatically open, but do not go to (if there are errors) the quickfix /
+" location list window, or close it when is has become empty.
+"
+" Note: Must allow nesting of autocmds to enable any customizations for quickfix
+" buffers.
+" Note: Normally, :cwindow jumps to the quickfix window if the command opens it
+" (but not if it's already open). However, as part of the autocmd, this doesn't
+" seem to happen.
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 syntax on
