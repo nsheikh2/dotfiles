@@ -29,7 +29,14 @@ hi CursorLine term=bold cterm=bold guibg=Grey85
 
 set wildmenu
 
-"F1 is annoying, I generally use help on a topic anyhow
+"so I can gq for breaking a line into 80 char chunks
+set tw=80
+
+"for easier time with comments
+"See: https://superuser.com/a/271024
+set formatoptions+=cro
+
+"accidentally pressing f1 sucks
 nnoremap <F1>   <nop>
 inoremap <F1>   <nop>
 
