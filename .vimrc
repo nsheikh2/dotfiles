@@ -2,6 +2,8 @@ set secure
 set nocompatible
 set nomodeline
 
+"set paste
+
 set mouse=a
 set noeb vb t_vb=
 
@@ -22,33 +24,46 @@ set ignorecase
 set smartcase
 
 highlight ColorColumn ctermbg=235
-set colorcolumn=80
+set colorcolumn=120
 
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey85
 
+" for separators
+set encoding=utf8
+set fillchars=vert:│
+"set fillchars+=stl:―
+"set fillchars+=stlnc:―
+hi VertSplit cterm=NONE
+
 set wildmenu
 
-"so I can gq for breaking a line into 80 char chunks
-set tw=80
+" so I can gq for breaking a line into 120 char chunks
+set tw=120
 
-"for easier time with comments
-"See: https://superuser.com/a/271024
-set formatoptions-=t
+" see :help fo-table
+set formatoptions=qlc
 
-"accidentally pressing f1 sucks
+" zooming a split kinda like in tmux
+" from https://medium.com/@vinodkri/zooming-vim-window-splits-like-a-pro-d7a9317d40
+noremap Zi <c-w>_ \| <c-w>\|
+noremap Zo <c-w>=
+
+
+" accidentally pressing f1 sucks
 nnoremap <F1>   <nop>
 inoremap <F1>   <nop>
 
-"tab key remapping stuff
-nnoremap th     :tabfirst<CR>
+" tab key remapping stuff
 nnoremap tk     :tabnext<CR>
 nnoremap tj     :tabprev<CR>
-nnoremap tl     :tablast<CR>
-"nnoremap tt     :tabedit<Space>
-nnoremap tn     :tabnext<Space>
-nnoremap tm     :tabm<Space>
-nnoremap td     :tabclose<CR>
+
+" filetype stuff
+autocmd BufEnter *.txt set filetype=text
+
+autocmd FileType make set noexpandtab
+autocmd FileType text set linebreak
+
 
 " for opening a quickfix window automatically with :make
 " See: http://vim.wikia.com/wiki/Automatically_open_the_quickfix_window_on_:make
@@ -62,5 +77,3 @@ nnoremap td     :tabclose<CR>
 " seem to happen.
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-
-syntax on
