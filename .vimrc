@@ -54,18 +54,18 @@ noremap Zi <c-w>_ \| <c-w>\|
 noremap Zo <c-w>=
 
 " auto closing items
-inoremap ' ''<left>
-inoremap '' ''
-inoremap " ""<left>
-inoremap "" ""
-inoremap ( ()<left>
-inoremap ()) ()
-inoremap [ []<left>
-inoremap []] []
-inoremap { {  }<left><left>
-inoremap {}} { }
-inoremap {<CR> {<CR>}<ESC>kA
-inoremap /*<CR> /*<CR>/<ESC>kA
+"inoremap ' ''<left>
+"inoremap '' ''
+"inoremap " ""<left>
+"inoremap "" ""
+"inoremap ( ()<left>
+"inoremap ()) ()
+"inoremap [ []<left>
+"inoremap []] []
+"inoremap { {  }<left><left>
+"inoremap {}} { }
+"inoremap {<CR> {<CR>}<ESC>kA
+"inoremap /*<CR> /*<CR>/<ESC>kA
 
 
 
